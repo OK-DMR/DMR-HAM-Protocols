@@ -44,6 +44,18 @@ In case either Client or Master being shut down or restarted, existing authentic
 
 Response from the other party is not expected and shall not be waited for
 
+### 1.3 Keep-Alive Procedure
+
+Once the Client is authenticated, it must send Keep-Alive periodically to Master, to keep the connection up and running.
+
+Recommended period for Client Keep-Alive Request (2.4) is 60 seconds, recommended connection timeout for Master is 5
+minutes (5 missed Client Keep-Alive Requests).
+
+- Client, once authenticated, sends Keep-Alive Request (2.4) to Master
+- Master responds to request:
+    - Keep-Alive Response (2.5) if the connection is still alive and can be used according to Master
+    - Master Negative Result (2.2) if the connection is considered closed, and Client must repeat Login Procedure (1.1)
+
 ## 2. Protocol data units
 
 Following are separate UDP datagram contents, send either by Client or Master, depending on context
