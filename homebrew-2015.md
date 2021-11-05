@@ -226,12 +226,12 @@ Valid values for Frame Type field are:
 
 - '00' - Voice Data
 - '01' - Voice Sync
-- '10' - Data Sync
+- '10' - Data or Data Sync
 - '11' - Unused
 
 **NOTE-2**:
 
-- When Frame Type is 'Data Sync', this is Data Type from Slot Type
+- When Frame Type is 'Data or Data Sync', this is Data Type from Slot Type
 - When Frame Type is 'Voice Data' or 'Voice Sync', this is the voice sequence number, with '0000' being 'A' from DMR
   specification, '0001' being 'B' and so on
 
@@ -245,3 +245,87 @@ PTT-release
 **NOTE-4**:
 
 The on-air DMR data with possible FEC fixes to the AMBE data and/or Slot Type and/or EMB, etc.
+
+## Examples
+
+### 3.1 RPTL PDU (2.1)
+
+Full PDU bytes: `5250544c00002211`
+
+| Bytes | Decoded | Note |
+| --- | --- | --- |
+| 5250544c | RPTL | ASCII text |
+| 00002211 | 8721 | Repeater ID |
+
+### 3.2 MSTNAK PDU (2.2)
+
+Full PDU bytes: `4d53544e414b00002211`
+
+| Bytes | Decoded | Note |
+| --- | --- | --- |
+| 4d53544e414b | MSTNAK | ASCII text |
+| 00002211 | 8721 | Repeater ID |
+
+### 3.3 MSTACK PDU (2.3)
+
+Full PDU bytes: `4d535441434b000401780a7ed498`
+
+| Bytes | Decoded | Note |
+| --- | --- | --- |
+| 4d535441434b |  | ASCII text |
+
+### 3.4 MSTPING PDU (2.4)
+
+Full PDU bytes: ``
+
+| Bytes | Decoded | Note |
+| --- | --- | --- |
+|  |  | ASCII text |
+
+### 3.5 RPTPONG PDU (2.5)
+
+Full PDU bytes: ``
+
+| Bytes | Decoded | Note |
+| --- | --- | --- |
+|  |  | ASCII text |
+
+### 3.6 MSTCL PDU (2.6)
+
+Full PDU bytes: ``
+
+| Bytes | Decoded | Note |
+| --- | --- | --- |
+|  |  | ASCII text |
+
+### 3.7 RPTCL PDU (2.7)
+
+Full PDU bytes: ``
+
+| Bytes | Decoded | Note |
+| --- | --- | --- |
+|  |  | ASCII text |
+
+### 3.8 RPTK PDU (2.8)
+
+Full PDU bytes: ``
+
+| Bytes | Decoded | Note |
+| --- | --- | --- |
+|  |  | ASCII text |
+
+### 3.9 RPTC PDU (2.9)
+
+Full PDU bytes: ``
+
+| Bytes | Decoded | Note |
+| --- | --- | --- |
+|  |  | ASCII text |
+
+### 3.10 MSTPING PDU (2.10)
+
+Full PDU bytes: ``
+
+| Bytes | Decoded | Note |
+| --- | --- | --- |
+|  |  | ASCII text |
